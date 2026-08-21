@@ -40,10 +40,7 @@ Each query is self-contained and can be run independently in any order. For a su
    ```
 2. Set up a Google Cloud project and BigQuery dataset named `olist`.
 3. Run `load_to_bigquery.py` to load all 9 CSVs into BigQuery tables.
-4. Run the SQL files in `sql/` in the BigQuery console (any order works — see suggested reading order below for the intended narrative flow).
+4. Run the SQL files in `sql/` in the BigQuery console.
 
 ## Key findings
-Headline finding: orders that arrive even 1-7 days late see review scores drop from ~4.3 to 2.71, and the % of low reviews (1-2 stars) jumps from ~9% to ~49% — delivery delay is the single strongest driver of customer dissatisfaction found in this analysis.
-
-## Data quality note
-Olist's `customer_id` is unique **per order**, not per person. The true customer-level identifier is `customer_unique_id`. All customer-level analysis (cohort retention, RFM) in this project uses `customer_unique_id` to avoid undercounting repeat customers — a common pitfall with this dataset.
+Headline finding: orders that arrive even 1-7 days late see review scores drop from ~4.3 to 2.71, and the % of low reviews (1-2 stars) jumps from ~9% to ~49% and delivery delay is the single strongest driver of customer dissatisfaction found in this analysis.
